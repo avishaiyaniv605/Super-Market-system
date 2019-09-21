@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="show_sql">false</property>
+		<property name="format_sql">false</property>
+
+		<property name="org.jboss.logging">ignoreTCL</property>
+		<property name="dialect">PersistenceLayer.SQLiteDialect</property>
+		<property name="connection.driver_class">org.sqlite.JDBC</property>
+		<property name="connection.url">jdbc:sqlite::resource:DataBase.db</property>
+		<property name="connection.username"></property>
+		<property name="connection.password"></property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+        <mapping class="PersistenceLayer.Product"/>
+        <mapping class="PersistenceLayer.LastDate"/>
+        <mapping class="PersistenceLayer.Inventory.StockProduct"/>
+        <mapping class="PersistenceLayer.Inventory.ProductInstance"/>
+        <mapping class="PersistenceLayer.Inventory.Category"/>
+        <mapping class="PersistenceLayer.Inventory.Discount"/>
+        <mapping class="PersistenceLayer.BranchProfile"/>
+        <mapping class="PersistenceLayer.Inventory.Orders.Orders"/>
+        <mapping class="PersistenceLayer.Inventory.Orders.PeriodicalOrder"/>
+        <mapping class="PersistenceLayer.Inventory.Orders.OrderItem"/>
+        <mapping class="PersistenceLayer.Suppliers.DeliveryDay"/>
+        <mapping class="PersistenceLayer.Suppliers.Item"/>
+        <mapping class="PersistenceLayer.Suppliers.Catalog"/>
+        <mapping class="PersistenceLayer.Suppliers.Supplier"/>
+        <mapping class="PersistenceLayer.Suppliers.SupplierContact"/>
+        <mapping class="PersistenceLayer.Suppliers.SupplierContract"/>
+
+        <mapping class="BusinessLayer.DeliveryModule.DeliveryFormProfile"/>
+        <mapping class="BusinessLayer.DeliveryModule.TruckProfile"/>
+        <mapping class="BusinessLayer.DeliveryModule.DeliveryProfile"/>
+        <mapping class="BusinessLayer.DeliveryModule.DriverProfile"/>
+
+
+        <mapping class="BusinessLayer.EmployeeModule.EmployeeConstraints"/>
+        <mapping class="BusinessLayer.EmployeeModule.EmployeeProfile"/>
+        <mapping class="BusinessLayer.EmployeeModule.EmployeeJobs"/>
+        <mapping class="BusinessLayer.EmployeeModule.Shifts"/>
+        <mapping class="BusinessLayer.EmployeeModule.ShiftsEmployees"/>
+
+	</session-factory>
+</hibernate-configuration>
